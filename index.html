@@ -3,111 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leve o Aroma de Pizza para o Seu Evento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Aroma de Pizza - Pizza artesanal, ambiente rústico e música boa na Chapada Diamantina desde 2021. Veja cardápio, fotos e como chegar!">
+  <title>Aroma de Pizza | Chapada Diamantina</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fff7ec;
+      font-family: Arial, sans-serif;
+      background-color: #ff4d4d;
+      background-image: url('fotos/bg-pizza-elements.png');
+      background-repeat: repeat;
+      background-size: 200px;
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #fffbe9;
     }
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      padding: 30px;
-    }
-    .header {
+    header {
+      background-image: url('fotos/header-pizza.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
       text-align: center;
+      padding: 80px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    nav {
+      background-color: #3e2f1c;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+    .section h2 {
+      font-size: 2em;
       margin-bottom: 20px;
     }
-    .header img {
-      max-width: 100%;
-      border-radius: 10px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
     }
-    h1 {
-      font-size: 24px;
-      margin: 20px 0 10px;
-      color: #d3340d;
-    }
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-    }
-    form input, form select, form textarea {
+    .gallery img {
       width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
+      border-radius: 12px;
+    }
+    .cardapio {
+      background-color: #fff0e5;
+      padding: 20px;
       border-radius: 8px;
-      margin-top: 5px;
+      color: #3e2f1c;
     }
-    form button {
-      margin-top: 25px;
+    form {
+      background-color: #f9f1e7;
+      padding: 20px;
+      border-radius: 8px;
+      color: #3e2f1c;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
       width: 100%;
-      background-color: #d3340d;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #bb3e03;
       color: white;
       border: none;
-      padding: 14px;
-      font-size: 16px;
-      border-radius: 8px;
+      border-radius: 5px;
       cursor: pointer;
     }
-    form button:hover {
-      background-color: #b42d0b;
-    }
-    .contato {
+    .footer {
+      background-color: #3e2f1c;
+      color: white;
       text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #555;
+      padding: 20px;
+    }
+    a {
+      color: #ffd700;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <img src="aroma-trailer.jpg" alt="Trailer Aroma de Pizza">
-      <h1>Leve o Aroma de Pizza para o seu evento!</h1>
-      <p>Nosso trailer, equipe e forno vão até sua festa, evento ou confraternização. Preencha o formulário abaixo e receba um orçamento personalizado:</p>
+  <header>
+    <h1>Aroma de Pizza</h1>
+    <p>Pizza artesanal na Chapada Diamantina </p>
+<p>esde 2021</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#espaco">Nosso Espaço</a>
+    <a href="#localizacao">Como Chegar</a>
+    <a href="#reservas">Reservas</a>
+  </nav>
+
+  <section class="section" id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Desde 2021, o Aroma de Pizza oferece pizzas artesanais em um ambiente rústico, acolhedor e familiar, com música ambiente e atendimento caloroso. Localizado em Caém, coração da Chapada Diamantina, somos o destino ideal após uma trilha ou passeio pela região.</p>
+  </section>
+
+  <section class="section" id="espaco">
+    <h2>Nosso Espaço</h2>
+    <div class="gallery">
+      <img src="fotos/ambiente1.jpg" alt="Ambiente da pizzaria">
+      <img src="fotos/pizza1.jpg" alt="Pizza artesanal">
+      <img src="fotos/ambiente2.jpg" alt="Clientes felizes">
     </div>
-    <form action="https://formsubmit.co/aromadepizzacaem@gmail.com" method="POST">
-      <label for="nome">Seu nome</label>
+  </section>
+
+  <section class="section" id="cardapio">
+    <h2>Cardápio Temático</h2>
+    <div class="cardapio">
+      <p>Nosso cardápio homenageia os pontos turísticos e povoados da nossa região com sabores únicos:</p>
+      <ul>
+        <li><strong>Riacho da Prata</strong> – Mussarela, calabresa e cebola roxa</li>
+        <li><strong>Itaitu</strong> – Frango, catupiry e milho</li>
+        <li><strong>Chapada Roots</strong> – Vegetariana especial</li>
+        <li><a href="https://wa.me/5574981230995" target="_blank">Veja o cardápio completo no WhatsApp</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="localizacao">
+    <h2>Como Chegar</h2>
+    <p>Estamos localizados no centro de Caém, a 26 km de Jacobina, no coração da Chapada Diamantina.</p>
+    <p><a href="https://www.google.com/maps/place/Aroma+de+Pizza">Clique aqui para abrir no Google Maps</a></p>
+  </section>
+
+  <section class="section" id="reservas">
+    <h2>Faça sua Reserva</h2>
+    <p>Fale conosco pelo WhatsApp clicando abaixo ou envie sua mensagem pelo formulário:</p>
+    <p><a href="https://wa.me/5574981230995" target="_blank">📲 (74) 98123-0995 – Reservar via WhatsApp</a></p>
+    <form name="reserva" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="reserva">
+      <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required>
 
-      <label for="telefone">WhatsApp</label>
-      <input type="tel" id="telefone" name="telefone" required>
-
-      <label for="evento">Tipo de evento</label>
-      <input type="text" id="evento" name="evento" placeholder="Casamento, aniversário, confraternização..." required>
-
-      <label for="pessoas">Quantidade estimada de pessoas</label>
-      <input type="number" id="pessoas" name="pessoas" required>
-
-      <label for="local">Local do evento (cidade e endereço)</label>
-      <input type="text" id="local" name="local" required>
-
-      <label for="data">Data prevista do evento</label>
+      <label for="data">Data da Reserva:</label>
       <input type="date" id="data" name="data" required>
 
-      <label for="mensagem">Mensagem ou observações</label>
-      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+      <label for="pessoas">Número de Pessoas:</label>
+      <input type="number" id="pessoas" name="pessoas" min="1" required>
 
-      <button type="submit">Quero receber um orçamento</button>
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem"></textarea>
+
+      <button type="submit">Enviar Reserva</button>
     </form>
-    <div class="contato">
-      <p><strong>Contato:</strong></p>
-      <p>Email: aromadepizzacaem@gmail.com</p>
-      <p>WhatsApp: (74) 98123-0995</p>
-    </div>
+  </section>
+
+  <div class="footer">
+    <p>© 2021–2025 Aroma de Pizza | Caém – Bahia – Chapada Diamantina</p>
+    <p>Contato e reservas: (74) 98123-0995</p>
+    <p>Siga-nos no Instagram: <a href="https://instagram.com/aromadepizza" target="_blank">@aromadepizza</a></p>
   </div>
 </body>
 </html>
