@@ -5,29 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aroma de Pizza – Pizzaria Artesanal na Chapada Diamantina</title>
   <style>
+    :root {
+      --vermelho-fundo: #b30000;
+      --amarelo-claro: #fff200;
+      --laranja-logo: #f26522;
+      --preto-logo: #000000;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #b30000;
-      color: #fff;
+      background-color: var(--vermelho-fundo);
+      color: var(--preto-logo);
     }
 
     header {
       text-align: center;
-      padding: 50px 20px 20px;
+      padding: 30px 20px 20px;
+      background-color: var(--vermelho-fundo);
+    }
+
+    header img {
+      width: 150px;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 40px;
-      color: #fff200;
-      text-shadow: 2px 2px #000;
+      font-size: 36px;
+      color: var(--preto-logo);
     }
 
     header p {
-      font-size: 20px;
+      font-size: 18px;
+      color: #fff;
       max-width: 700px;
       margin: 0 auto;
-      color: #f5f5f5;
     }
 
     nav {
@@ -39,8 +51,8 @@
     }
 
     nav a {
-      background-color: #fff200;
-      color: #b30000;
+      background-color: var(--amarelo-claro);
+      color: var(--vermelho-fundo);
       padding: 10px 20px;
       border-radius: 20px;
       font-weight: bold;
@@ -54,7 +66,14 @@
       padding: 0 20px;
     }
 
-    /* Carousel Styles */
+    section h2 {
+      color: var(--laranja-logo);
+    }
+
+    a {
+      color: var(--amarelo-claro);
+    }
+
     .carousel-container {
       position: relative;
       width: 100%;
@@ -82,12 +101,12 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(255, 255, 0, 0.8);
+      background-color: var(--amarelo-claro);
       border: none;
       font-size: 24px;
       padding: 8px 12px;
       cursor: pointer;
-      color: #b30000;
+      color: var(--vermelho-fundo);
       border-radius: 50%;
       z-index: 1;
     }
@@ -126,6 +145,8 @@
       text-align: center;
       padding: 40px 20px;
       font-size: 16px;
+      background-color: var(--vermelho-fundo);
+      color: #fff;
     }
 
     form input, form textarea {
@@ -137,23 +158,20 @@
     }
 
     form button {
-      background-color: #fff200;
-      color: #b30000;
+      background-color: var(--amarelo-claro);
+      color: var(--vermelho-fundo);
       padding: 10px 20px;
       font-weight: bold;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-
-    a {
-      color: #fff200;
-    }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="Logo Aroma de Pizza.png" alt="Logo Aroma de Pizza" />
     <h1>🍕 Aroma de Pizza – Sabor Artesanal da Chapada Diamantina 🌄</h1>
     <p>Desde 2021, entregando pizzas feitas na hora com insumos selecionados e clima familiar no coração de Caém, a 26 km de Jacobina!</p>
   </header>
@@ -176,7 +194,7 @@
     <p>🍕 Riacho da Prata – Molho de tomate Caseiro, queijo da região, calabresa e cebola<br>
        🍕 Charneca da Casa - Molho de tomate caseiro, queijo da região, calabresa e cebola<br>
        🍕 Jiral - Molho de tomate caseiro, queijo da região, carne do sol desfiada e banana da terra<br>
-       <a href="https://wa.me/5574981230995" target="_blank">Confira o nosso cardápio completo no WhatsApp</a></p>
+       <a href="https://wa.me/5574981230995" target="_blank">Peça pelo WhatsApp</a></p>
   </section>
 
   <section id="espaco">
@@ -185,8 +203,8 @@
       <button class="carousel-button prev" onclick="prevSlide()">❮</button>
       <button class="carousel-button next" onclick="nextSlide()">❯</button>
       <div class="carousel-slide" id="carouselSlide">
-        <img src="Espaço 1.jpeg" alt="Ambiente interno da pizzaria" />
-        <img src="Pizza 1.jpeg" alt="Pizza artesanal servida" />
+        <img src="Espaço 1.jpeg" alt="Ambiente interno" />
+        <img src="Pizza 1.jpeg" alt="Pizza artesanal" />
         <img src="Espaço 3.jpeg" alt="Ambiente com luzes" />
         <img src="Espaço 4.jpeg" alt="Decoração rústica" />
         <img src="Espaço 5.jpeg" alt="Área externa" />
@@ -197,7 +215,7 @@
 
   <section id="como-chegar">
     <h2>Como Chegar</h2>
-    <p>📍 Praça Manoel Novaes (Praça do São Pedro), 1º andar – Centro de Caém/BA<br>
+    <p>📍 Praça Manoel Novaes, 1º andar – Centro de Caém/BA<br>
        👉 Apenas 26 km de Jacobina<br>
        🗺️ <a href="https://maps.app.goo.gl/JqbLKhVtY5Q9Tgew5" target="_blank">Abrir no Google Maps</a></p>
   </section>
