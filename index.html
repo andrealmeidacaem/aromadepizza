@@ -54,7 +54,7 @@
       padding: 0 20px;
     }
 
-    /* Carousel */
+    /* Carousel Styles */
     .carousel-container {
       position: relative;
       width: 100%;
@@ -67,24 +67,35 @@
 
     .carousel-slide {
       display: flex;
-      width: 600%;
-      animation: slide 30s infinite;
+      transition: transform 0.5s ease-in-out;
     }
 
     .carousel-slide img {
       width: 100%;
-      height: auto;
+      flex-shrink: 0;
       border-radius: 15px;
     }
 
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      16.66% { transform: translateX(-100%); }
-      33.33% { transform: translateX(-200%); }
-      50% { transform: translateX(-300%); }
-      66.66% { transform: translateX(-400%); }
-      83.33% { transform: translateX(-500%); }
-      100% { transform: translateX(0%); }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 0, 0.8);
+      border: none;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      color: #b30000;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
     }
 
     .reviews {
@@ -169,7 +180,9 @@
   <section id="espaco">
     <h2>Nosso Espaço</h2>
     <div class="carousel-container">
-      <div class="carousel-slide">
+      <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+      <button class="carousel-button next" onclick="nextSlide()">❯</button>
+      <div class="carousel-slide" id="carouselSlide">
         <img src="Espaço 1.jpeg" alt="Ambiente interno da pizzaria" />
         <img src="Pizza 1.jpeg" alt="Pizza artesanal servida" />
         <img src="Espaço 3.jpeg" alt="Ambiente com luzes" />
@@ -182,7 +195,7 @@
 
   <section id="como-chegar">
     <h2>Como Chegar</h2>
-    <p>📍 Estamos localizados na Praça Manoel Novaes (Praça do São Pedro), 1º andar no Centro de Caém/BA<br>
+    <p>📍 Praça Manoel Novaes (Praça do São Pedro), 1º andar – Centro de Caém/BA<br>
        👉 Apenas 26 km de Jacobina<br>
        🗺️ <a href="https://maps.app.goo.gl/JqbLKhVtY5Q9Tgew5" target="_blank">Abrir no Google Maps</a></p>
   </section>
@@ -220,6 +233,26 @@
     <p>Siga-nos no Instagram <a href="https://instagram.com/aromadepizza" target="_blank">@aromadepizza</a></p>
     <p>&copy; 2021–2025 Aroma de Pizza • Caém, Bahia</p>
   </footer>
+
+  <script>
+    const slide = document.getElementById('carouselSlide');
+    let index = 0;
+    const total = slide.children.length;
+
+    function updateCarousel() {
+      slide.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      updateCarousel();
+    }
+  </script>
 
 </body>
 </html>
