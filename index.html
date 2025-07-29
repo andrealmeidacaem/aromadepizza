@@ -1,153 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aroma de Pizza - Sabores da Chapada</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aroma de Pizza – Pizzaria Artesanal na Chapada Diamantina</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #b30000 url('https://cdn.pixabay.com/photo/2016/10/26/00/24/pizza-1779402_1280.jpg') no-repeat center center;
-      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #b30000; /* Vermelho sólido */
       color: #fff;
     }
+
     header {
-      padding: 40px 20px;
       text-align: center;
-      background-color: rgba(0,0,0,0.7);
+      padding: 50px 20px 20px;
     }
+
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 40px;
+      color: #fff200;
+      text-shadow: 2px 2px #000;
     }
+
     header p {
-      font-size: 1.2em;
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #f5f5f5;
     }
+
     nav {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 30px 0;
     }
-    nav button {
-      padding: 10px 15px;
-      background: #ffcc00;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+
+    nav a {
+      background-color: #fff200;
+      color: #b30000;
+      padding: 10px 20px;
+      border-radius: 20px;
       font-weight: bold;
+      text-decoration: none;
+      box-shadow: 2px 2px 5px #00000055;
     }
+
     section {
-      padding: 30px 20px;
-      background-color: rgba(0,0,0,0.6);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
-    .social-proof {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .review {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: #fff3;
-      padding: 15px;
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
       border-radius: 10px;
     }
-    .review img {
-      border-radius: 50%;
-      width: 50px;
+
+    .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
+
+    .review {
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .review img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
     .stars {
       color: gold;
     }
+
     footer {
       text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
+      padding: 40px 20px;
+      font-size: 16px;
     }
-    a.whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      background: #25d366;
-      color: white;
-      padding: 15px;
-      text-decoration: none;
-      border-radius: 10px;
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #fff200;
+      color: #b30000;
+      padding: 10px 20px;
       font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>🍕 Aroma de Pizza – Sabor Artesanal da Chapada Diamantina 🌄</h1>
+    <p>Desde 2021, entregando pizzas feitas na hora com insumos selecionados e clima familiar no coração de Caém, a 26 km de Jacobina!</p>
+  </header>
 
-<header>
-  <h1>Aroma de Pizza 🍕</h1>
-  <p>Sabores artesanais direto da Chapada Diamantina para o seu prato</p>
-</header>
+  <nav>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#espaco">Nosso Espaço</a>
+    <a href="#como-chegar">Como Chegar</a>
+    <a href="#reservas">Reservas</a>
+  </nav>
 
-<nav>
-  <button onclick="document.getElementById('sobre').scrollIntoView()">Sobre Nós</button>
-  <button onclick="window.location.href='https://wa.me/5574981230995'">Cardápio</button>
-  <button onclick="document.getElementById('espaco').scrollIntoView()">Nosso Espaço</button>
-  <button onclick="document.getElementById('mapa').scrollIntoView()">Como Chegar</button>
-  <button onclick="document.getElementById('reserva').scrollIntoView()">Reservas</button>
-</nav>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Mais que uma pizzaria, o Aroma de Pizza é um ponto de encontro para famílias, casais e viajantes apaixonados pela Chapada Diamantina. Nosso ambiente rústico e acolhedor traz o melhor da pizza artesanal, com nomes que homenageiam pontos turísticos de Caém.</p>
+  </section>
 
-<section id="sobre">
-  <h2>🍅 Sobre Nós</h2>
-  <p>Somos uma pizzaria apaixonada por sabores autênticos. Aqui, unimos a tradição italiana com ingredientes frescos da região da Chapada Diamantina.</p>
-</section>
+  <section id="cardapio">
+    <h2>Nosso Cardápio</h2>
+    <p>🍕 Riacho da Prata – Molho de tomate Caseiro, queijo da região, calabresa e cebola<br>
+       🍕 Charneca da Casa - Molho de tomate caseiro, queijo da região, calabresa e cebola<br>
+       🍕 Jiral - Molho de tomate caseiro, queijo da região, carne do sol desfiada e banana da terra<br>
+       <a href="#cardapio">Confira o nosso cardápio completo </a>
+  </section>
 
-<section id="espaco">
-  <h2>🏞 Nosso Espaço</h2>
-  <p>Ambiente aconchegante, com vista para as serras de Caém e um atendimento que faz você se sentir em casa.</p>
-</section>
+  <section id="espaco" class="gallery">
+    <h2>Nosso Espaço</h2>
+    <img src="Espaço 1.jpeg" alt="Ambiente interno da pizzaria" />
+    <img src="Pizza 1.jpg" alt="Pizza artesanal servida" />
+    <img src="Espaço 2" alt="Espaço" />
+  </section>
 
-<section id="mapa">
-  <h2>📍 Como Chegar</h2>
-  <p>Estamos localizados em Caém, Bahia. Clique abaixo para abrir no mapa:</p>
-  <a href="https://maps.app.goo.gl/JqbLKhVtY5Q9Tgew5" target="_blank">Ver Localização no Google Maps</a>
-</section>
+  <section id="como-chegar">
+    <h2>Como Chegar</h2>
+    <p>📍 Estamos localizados na Praça Manoel Novaes ( Praça do São Pedro ) 1º andar no Centro de Caém/BA<br>
+       👉 Apenas 26 km de Jacobina<br>
+       🗺️ <a href="https://maps.google.com/?q=Praça+da+Matriz,+Caém,+BA" target="_blank" style="color: #fff200;">Clique aqui para abrir no Google Maps</a></p>
+  </section>
 
-<section class="social-proof">
-  <h2>✨ O que nossos clientes dizem</h2>
-  <div class="review">
-    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente 1">
-    <div>
-      <strong>Juliana S.</strong><br>
-      <span class="stars">★★★★★</span><br>
-      “A melhor pizza da região! O atendimento é impecável.”
+  <section id="reservas">
+    <h2>Reservas</h2>
+    <form action="https://formspree.io/f/{SEU_ID}" method="POST">
+      <input type="text" name="name" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="message" placeholder="Data e horário da reserva" required></textarea>
+      <button type="submit">Reservar Agora</button>
+    </form>
+    <p>Ou fale direto com a gente no WhatsApp 👉 <a href="https://wa.me/5574981230995" style="color: #fff200;">(74) 98123-0995</a></p>
+  </section>
+
+  <section>
+    <h2>O que dizem nossos clientes:</h2>
+    <div class="reviews">
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar cliente"/>
+        <p><strong>André S.</strong><br> ⭐⭐⭐⭐⭐<br>“Melhor pizza da região! Atendimento excelente e ambiente super agradável.”</p>
+      </div>
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar cliente"/>
+        <p><strong>Juliana R.</strong><br> ⭐⭐⭐⭐⭐<br>“Pizzaria charmosa em Caém. Vale a viagem! A pizza 'Jiral' é divina.”</p>
+      </div>
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="Avatar cliente"/>
+        <p><strong>Carlos T.</strong><br> ⭐⭐⭐⭐⭐<br>“Ambiente familiar, música boa e comida de qualidade. Recomendo muito!”</p>
+      </div>
     </div>
-  </div>
-  <div class="review">
-    <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Cliente 2">
-    <div>
-      <strong>Marcos A.</strong><br>
-      <span class="stars">★★★★★</span><br>
-      “Lugar aconchegante e pizza com gosto de forno à lenha!”
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="reserva">
-  <h2>📅 Reservas</h2>
-  <p>Garanta sua mesa agora mesmo:</p>
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="text" name="name" placeholder="Seu nome" required><br><br>
-    <input type="email" name="email" placeholder="Seu e-mail" required><br><br>
-    <input type="text" name="phone" placeholder="Telefone / WhatsApp" required><br><br>
-    <textarea name="message" placeholder="Data, horário e número de pessoas" rows="4" required></textarea><br><br>
-    <button type="submit">Reservar Agora</button>
-  </form>
-  <a class="whatsapp" href="https://wa.me/5574981230995" target="_blank">Falar com a gente no WhatsApp</a>
-</section>
-
-<footer>
-  Siga-nos no Instagram: <a href="https://instagram.com/aromadepizza" target="_blank">@aromadepizza</a><br>
-  &copy; 2025 Aroma de Pizza
-</footer>
-
+  <footer>
+    <p>Siga-nos no Instagram <a href="https://instagram.com/aromadepizza" target="_blank" style="color:#fff200;">@aromadepizza</a></p>
+    <p>&copy; 2021–2025 Aroma de Pizza • Caém, Bahia</p>
+  </footer>
 </body>
 </html>
