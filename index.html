@@ -1,278 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aroma de Pizza – Pizzaria Artesanal na Chapada Diamantina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aroma de Pizza</title>
   <style>
-    :root {
-      --vermelho-fundo: #b30000;
-      --amarelo-claro: #fff200;
-      --laranja-logo: #f26522;
-      --preto-logo: #000000;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--vermelho-fundo);
-      color: var(--preto-logo);
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; background: #fff; color: #5A2D0C; }
     header {
-      text-align: center;
-      padding: 30px 20px 20px;
-      background-color: var(--vermelho-fundo);
-    }
-
-    header img {
-      width: 150px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 36px;
-      color: var(--preto-logo);
-    }
-
-    header p {
-      font-size: 18px;
-      color: #fff;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    nav {
+      background: #EED6A6;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 30px 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     nav a {
-      background-color: var(--amarelo-claro);
-      color: var(--vermelho-fundo);
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-weight: bold;
+      margin: 0 15px;
       text-decoration: none;
-      box-shadow: 2px 2px 5px #00000055;
+      color: #5A2D0C;
+      font-weight: bold;
     }
-
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+    nav a:hover { color: #A63712; }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .logo {
+      height: 60px;
     }
-
-    section h2 {
-      color: var(--laranja-logo);
-    }
-
-    a {
-      color: var(--amarelo-claro);
-    }
-
-    .carousel-container {
-      position: relative;
+    .galeria img {
       width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      overflow: hidden;
+      max-width: 300px;
+      margin: 10px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
-    .carousel-slide {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: var(--amarelo-claro);
-      border: none;
-      font-size: 24px;
-      padding: 8px 12px;
-      cursor: pointer;
-      color: var(--vermelho-fundo);
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .carousel-button.prev {
-      left: 10px;
-    }
-
-    .carousel-button.next {
-      right: 10px;
-    }
-
-    .reviews {
+    .galeria {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
     }
-
-    .review {
-      background-color: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .review img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-
     footer {
+      background: #EED6A6;
       text-align: center;
-      padding: 40px 20px;
-      font-size: 16px;
-      background-color: var(--vermelho-fundo);
-      color: #fff;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-
-    form button {
-      background-color: var(--amarelo-claro);
-      color: var(--vermelho-fundo);
-      padding: 10px 20px;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #5A2D0C;
     }
   </style>
+  <script>
+    function mostrar(secaoId) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(secaoId).style.display = 'block';
+    }
+    window.onload = () => mostrar('sobre');
+  </script>
 </head>
 <body>
-
   <header>
-    <img src="Logo Aroma de Pizza.png" alt="Logo Aroma de Pizza" />
-    <h1>🍕 Aroma de Pizza – Sabor Artesanal da Chapada Diamantina 🌄</h1>
-    <p>Desde 2021, entregando pizzas feitas na hora com insumos selecionados e clima familiar no coração de Caém, a 26 km de Jacobina!</p>
+    <img src="Logo Aroma de Pizza.png" alt="Logo Aroma de Pizza" class="logo" />
+    <nav>
+      <a href="#" onclick="mostrar('sobre')">Sobre Nós</a>
+      <a href="#" onclick="mostrar('cardapio')">Cardápio</a>
+      <a href="#" onclick="mostrar('contato')">Contato</a>
+    </nav>
   </header>
-
-  <nav>
-    <a href="#sobre">Sobre Nós</a>
-    <a href="#cardapio">Cardápio</a>
-    <a href="#espaco">Nosso Espaço</a>
-    <a href="#como-chegar">Como Chegar</a>
-    <a href="#reservas">Reservas</a>
-  </nav>
 
   <section id="sobre">
     <h2>Sobre Nós</h2>
-    <p>Mais que uma pizzaria, o Aroma de Pizza é um ponto de encontro para famílias, casais e viajantes apaixonados pela Chapada Diamantina. Nosso ambiente rústico e acolhedor traz o melhor da pizza artesanal, com nomes que homenageiam pontos turísticos de Caém.</p>
-  </section>
-
-  <section id="cardapio">
-    <h2>Nosso Cardápio</h2>
-    <p>🍕 Riacho da Prata – Molho de tomate Caseiro, queijo da região, calabresa e cebola<br>
-       🍕 Charneca da Casa - Molho de tomate caseiro, queijo da região, calabresa e cebola<br>
-       🍕 Jiral - Molho de tomate caseiro, queijo da região, carne do sol desfiada e banana da terra<br>
-       <a href="https://wa.me/5574981230995" target="_blank">Peça pelo WhatsApp</a></p>
-  </section>
-
-  <section id="espaco">
-    <h2>Nosso Espaço</h2>
-    <div class="carousel-container">
-      <button class="carousel-button prev" onclick="prevSlide()">❮</button>
-      <button class="carousel-button next" onclick="nextSlide()">❯</button>
-      <div class="carousel-slide" id="carouselSlide">
-        <img src="Espaço 1.jpeg" alt="Ambiente interno" />
-        <img src="Pizza 1.jpeg" alt="Pizza artesanal" />
-        <img src="Espaço 3.jpeg" alt="Ambiente com luzes" />
-        <img src="Espaço 4.jpeg" alt="Decoração rústica" />
-        <img src="Espaço 5.jpeg" alt="Área externa" />
-        <img src="Espaço 2.jpeg" alt="Espaço familiar" />
-      </div>
+    <p style="margin: 30px 0;">No coração de Caém, nasceu o Aroma de Pizza — mais que uma pizzaria, um espaço para reunir histórias, risos e muito sabor. Cada detalhe foi pensado com carinho para proporcionar uma experiência única.</p>
+    <div class="galeria">
+      <img src="Pizza 1.jpeg" alt="Pizza" />
+      <img src="Vista 1.jpeg" alt="Vista da Pizzaria" />
+      <img src="Espaço 7.jpeg" alt="Espaço Interno" />
+      <img src="Espaço 5.jpeg" alt="Espaço Lounge" />
+      <img src="Espaço 4.jpeg" alt="Decoração" />
+      <img src="Espaço 2.jpeg" alt="Ambiente" />
     </div>
   </section>
 
-  <section id="como-chegar">
-    <h2>Como Chegar</h2>
-    <p>📍 Praça Manoel Novaes, 1º andar – Centro de Caém/BA<br>
-       👉 Apenas 26 km de Jacobina<br>
-       🗺️ <a href="https://maps.app.goo.gl/JqbLKhVtY5Q9Tgew5" target="_blank">Abrir no Google Maps</a></p>
-  </section>
+  <section id="cardapio" style="display: none;">
+    <h2>Cardápio</h2>
+    <p>🍕 Riacho da Prata – Molho de tomate Caseiro, queijo da região, calabresa e cebola</p>
+<p>🍕 Charneca da Casa - Molho de tomate caseiro, queijo da região, calabresa e cebola</p>
+<p>🍕 Jiral - Molho de tomate caseiro, queijo da região, carne do sol desfiada e banana da terra</p>
+<p> Solicite o nosso cardápio completo (74) 98123-0995</p> 
+ </section>
 
-  <section id="reservas">
-    <h2>Reservas</h2>
-    <form action="https://formspree.io/f/{SEU_ID}" method="POST">
-      <input type="text" name="name" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu e-mail" required>
-      <textarea name="message" placeholder="Data e horário da reserva" required></textarea>
-      <button type="submit">Reservar Agora</button>
-    </form>
-    <p>Ou fale direto com a gente no WhatsApp 👉 <a href="https://wa.me/5574981230995">(74) 98123-0995</a></p>
-  </section>
-
-  <section>
-    <h2>O que dizem nossos clientes:</h2>
-    <div class="reviews">
-      <div class="review">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar cliente"/>
-        <p><strong>André S.</strong><br> ⭐⭐⭐⭐⭐<br>“Melhor pizza da região! Atendimento excelente e ambiente super agradável.”</p>
-      </div>
-      <div class="review">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar cliente"/>
-        <p><strong>Juliana R.</strong><br> ⭐⭐⭐⭐⭐<br>“Pizzaria charmosa em Caém. Vale a viagem! A pizza 'Jiral' é divina.”</p>
-      </div>
-      <div class="review">
-        <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="Avatar cliente"/>
-        <p><strong>Carlos T.</strong><br> ⭐⭐⭐⭐⭐<br>“Ambiente familiar, música boa e comida de qualidade. Recomendo muito!”</p>
-      </div>
-    </div>
+  <section id="contato" style="display: none;">
+    <h2>Contato</h2>
+    <p>📍 Localização: Praça Manoel Novaes ( Praça do São Pedro ) 1º Andar - Centro - Caém-BA<br>
+       📞 WhatsApp para pedidos e reservas: (74) 9 8123-0995<br>
+       📱 Instagram: @aromadepizza</p>
   </section>
 
   <footer>
-    <p>Siga-nos no Instagram <a href="https://instagram.com/aromadepizza" target="_blank">@aromadepizza</a></p>
-    <p>&copy; 2021–2025 Aroma de Pizza • Caém, Bahia</p>
+    &copy; 2025 Aroma de Pizza. Todos os direitos reservados.
   </footer>
-
-  <script>
-    const slide = document.getElementById('carouselSlide');
-    let index = 0;
-    const total = slide.children.length;
-
-    function updateCarousel() {
-      slide.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % total;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + total) % total;
-      updateCarousel();
-    }
-  </script>
-
 </body>
 </html>
